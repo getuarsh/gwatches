@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CartController!{% endblock %}
+
+{% block body %}
+     <div class="container">
+        <h1 class="text-xl font-medium ">Shopping Cart</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for element in dataPanier %}
+                <tr>
+                    <td>{{ element.product.nameProduct}}</td>
+                    <td>{{ element.product.price }}€</td>
+                    <td><a  class="text-decoration-none" href="{{path("cart_remove",{id: element.product.id})}}">
+                        <i class="bi bi-dash-circle-fill"></i>
+                    </a>{{ element.quantity }}<a class="text-decoration-none" href="{{path("cart_add",{id: element.product.id})}}">
+                        <i class="bi bi-plus-circle-fill"></i>
+                    </a></td>
+                    <td>{{ element.quantity * element.product.price }}€</td>
+                    <td>
+                        <a href="{{path("cart_delete",{id: element.product.id})}}" class="btn btn-danger">
+                            <i class="bi bi-x-square-fill"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Votre Panier est vide</td>
+                </tr>
+           {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">TOTAL</th>
+                <td>{{total}}€</td>
+                <td><a href="{{path("cart_delete_all")}}" class="btn btn-danger">
+                    DELETE ALL</i></a></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+{% endblock %}

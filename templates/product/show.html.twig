@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produis
+{% endblock %}
+
+{% block body %}
+
+<section class="product mt-5">
+	<div class="product__photo">
+		<div class="photo-container">
+			{% for image in product.images%}
+        <img src="{{asset('/uploads/' ~ image.url)}}" style="object-fit:cover;height:15vw; "class="card-img-top " alt="...">
+        {% endfor %}
+			<div class="photo-album">
+				<ul>
+					{% for image in product.images%}
+					<li><img src="{{asset('/uploads/' ~ image.url)}}"></li>
+					<li><img src="{{asset('/uploads/' ~ image.url)}}"></li>
+					<li><img src="{{asset('/uploads/' ~ image.url)}}"></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="product__info">
+		<div class="title">
+			<h1>Name of Product: {{product.nameProduct}}</h1>
+		</div>
+		<div class="price">
+			€<span>{{product.price}}</span>
+		</div>
+		<div class="description">
+			<h3>DESCRIPTION</h3>
+			<ul>
+				
+				<li>Dynamique, élégante et sportive</li>
+				<li>L'HyperChrome Automatic Chronograph </li>
+				<li> Des fonctions utiles dans un style convoité.</li>
+				<li>Aussi bien un costume qu'une tenue décontractée</li>
+			</ul>
+		</div>
+		<button class="buy--btn"><a class="text-decoration-none text-light"href="{{path("cart_add",{id: product.id})}}"> ADD TO CART</a></button>
+	</div>
+</section>
+
+
+{# 
+	<div class="container">
+		<div class="d-flex justify-content-center mt-5">
+			<div class="card mt-5" style="width: 20em;">
+				<div class="card-body">
+					<p class="card-title"><strong>Name of Product:</strong> {{product.nameProduct}}</p>
+					<p class="card-text"><strong>Description:</strong>  
+						{{product.description}}</p>
+					<p class="card-text"><strong>Price:</strong> {{product.price}}€</p>
+					<p class="card-text"><strong>Dimensions: </strong>
+						{{product.dimensions}} cm</p>
+				</div>
+			</div>
+		</div>
+	</div> #}
+{% endblock %}

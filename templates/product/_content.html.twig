@@ -1,0 +1,52 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Nos produits{% endblock %}
+
+
+ {% block body %} #}
+ <div class="container" style="padding-top: 5em;">
+  <a class="btn btn-secondary btn-sm" href="{{ path('add_product')}}">Add Product<i class="bi bi-folder-plus"></i></a>
+  <h4>List of Products</h4>
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4 d-flex">
+      <div class="card mb-5" style="width: 18rem;">
+        {% for image in product.images%}
+        <img src="{{asset('/uploads/' ~ image.url)}}" style="object-fit:cover;height:15vw;"class="card-img-top " alt="...">
+        {% endfor %}
+        <div class="card-body">
+          <h5 class="card-title"> {{product.nameProduct}}</h5>
+          <a href="{{path("cart_add",{id: product.id})}}" class="btn btn-dark">Add to Cart </a>
+          <a href="{{path('show_product',{'id': product.id})}}" class="btn btn-success"><i class="bi bi-three-dots"></i></a>
+          <a href="{{path('update_product',{'id': product.id})}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  
+
+  {# html code pour Starbuck  #}
+  {# <div class="content">
+    <div class="textBox">
+      <h2>It's not just a Coffe<br>it's <span>Starbucks</span></h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta asperiores voluptatibus explicabo consequatur ea, eligendi vel aliquid odio minima totam hic inventore temporibus est, nihil enim. Ea, similique quisquam maiores temporibus tempore dignissimos animi accusantium libero doloremque consequuntur porro modi impedit nam maxime possimus eligendi nihil. Possimus corrupti doloremque ipsa!</p>
+      <a href="#">Learn More</a>
+    </div>
+    <div class="imgBox">
+      <img src="img1.jpg" class="starbucks">
+    </div>
+  </div>
+  <ul class="thumb">
+    <li><img src="thumb1.png" onclick="imgSlider('img1.png');changeCircleColor('#017143')"></li>
+    <li><img src="thumb2.png" onclick="imgSlider('img2.png');changeCircleColor('#eb7495')"></li>
+    <li><img src="thumb3.png"onclick="imgSlider('img3.png');changeCircleColor('#d75')"></li>
+  </ul>
+  <ul class="sci">
+    <li><a href="#"><img src="facebook.png"></a></li>
+    <li><a href="#"><img src="twitter.png"></a></li>
+    <li><a href="#"><img src="instagram.png"></a></li>
+  </ul> #}
+</div>
+{# {% endblock %}   #}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajouter une Product! {% endblock %}
+
+{% block body %}
+
+<div class="container"> 
+    <div class="d-flex justify-content-center mt-5">
+    <h1> Add a Product </h1>
+    </div>
+    <div class="container mt-3 w-25">
+    {{form_start(formProduct)}}
+    {{form_widget(formProduct)}}
+    {% if app.request.attributes.get('_route') == 'update_product'%}
+    <h2>Images</h2>
+    {% for image in product.images%}
+        <div>
+            <img src="{{asset('/uploads/' ~ image.url)}}" alt="Image" width="150">
+            <a href="{{ path('product_delete_image',{'id':image.id})}}"
+            data-delete data-token="{{csrf_token('delete' ~ image.id)}}">Supprimer</a>
+        </div>
+            {% endfor %}
+            {% endif %}
+            {{form_end(formProduct)}}
+        </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{asset('js/images.js')}}"></script>
+{% endblock  %}

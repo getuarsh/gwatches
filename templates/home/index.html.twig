@@ -1,0 +1,179 @@
+ {% extends 'base.html.twig' %} 
+
+{% block title %}Home!{% endblock %}
+
+{% block body %}
+{% if app.user %}
+<h1> Bienvenue {{app.user.email}}</h1>
+{% endif %}
+<div>
+    <div class="carousel">
+      <ul class="slides">
+        <input type="radio" name="radio-buttons" id="img-1" checked />
+        <li class="slide-container">
+          <div class="slide-image"><img src="/img/watches01.jpeg"></div>
+          <div class="carousel-controls">
+            <label for="img-3" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-2" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <input type="radio" name="radio-buttons" id="img-2" />
+        <li class="slide-container">
+          <div class="slide-image">
+            <img src="/img/watches02.jpeg">
+          </div>
+          <div class="carousel-controls">
+            <label for="img-1" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-3" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <input type="radio" name="radio-buttons" id="img-3" />
+        <li class="slide-container">
+          <div class="slide-image">
+            <img src="/img/watches03.jpeg">
+          </div>
+          <div class="carousel-controls">
+            <label for="img-2" class="prev-slide">
+              <span>&lsaquo;</span>
+            </label>
+            <label for="img-1" class="next-slide">
+              <span>&rsaquo;</span>
+            </label>
+          </div>
+        </li>
+        <div class="carousel-dots">
+          <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+          <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+          <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="gallery mt-4">
+    <h1> NOUVEAUTES</h1>
+<div class="accordion">
+  <ul>
+    <li tabindex="1">
+      <div>
+        <a href="">
+          <h2>Watches01</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="2">
+      <div>
+        <a href="#">
+          <h2>Watches02</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="3">
+      <div>
+        <a href="#">
+          <h2>Watches03</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="4">
+      <div>
+        <a href="#">
+          <h2>Watches04</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="5">
+      <div>
+        <a href="#">
+          <h2>Watches05</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+    <li tabindex="6">
+      <div>
+        <a href="#">
+          <h2>Watches06</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+  </div>
+    <div class="watch-container">
+      <div class="watch-strap-top"></div>
+  
+      <div class="watch">
+        <div class="watch-face">
+          <div class="watch-face-outline">
+            <div class="watch-face-outline-point point-12"></div>
+            <div class="watch-face-outline-point point-1"></div>
+            <div class="watch-face-outline-point point-2"></div>
+            <div class="watch-face-outline-point point-3"></div>
+            <div class="watch-face-outline-point point-4"></div>
+            <div class="watch-face-outline-point point-5"></div>
+            <div class="watch-face-outline-point point-6"></div>
+            <div class="watch-face-outline-point point-7"></div>
+            <div class="watch-face-outline-point point-8"></div>
+            <div class="watch-face-outline-point point-9"></div>
+            <div class="watch-face-outline-point point-10"></div>
+            <div class="watch-face-outline-point point-11"></div>
+          </div>
+  
+          <div class="watch-face-date date"></div>
+  
+          <div class="watch-face-centre">
+            <div class="watch-face-centre-inner"></div>
+          </div>
+  
+          <div class="watch-face-hands">
+            <div class="watch-face-hand hour"></div>
+            <div class="watch-face-hand minute"></div>
+            <div class="watch-face-hand second"></div>
+          </div>
+        </div>
+  
+        <div class="watch-crown"></div>
+      </div>
+  
+      <div class="watch-strap-bottom">G-Watch</div>
+    </div>
+  
+  <section class="article">
+    <aside>
+      <h3>AUDEMARS PIGUET</h3>
+      <p>Pour commémorer le 40e anniversaire de la première Royal Oak Extra-Plate en or jaune. Audemars Piguet réintroduit l'emblématique Royal Oak Extra-Plate 15202 </p>
+    </aside>
+    
+  </section>
+
+  <div class="retours">
+    <div class="">
+        <h3>Retours Gratuit</h3>
+        <p>Pendant 15 Jours</p>
+      </div>
+    <div class="retLiv">
+      <h3>Livraison Offerte</h3>
+      <p>À partir de 200€ d’achat </p>
+    </div>
+    <div class="">
+      <h3>Livraison Express</h3>
+      <p>En 3h à Haut-Rhin et en 24h pour  de nombreuses destination</p>
+    </div>
+  </div>
+
+  
+{% endblock %} 
+

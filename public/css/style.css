@@ -1,0 +1,920 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #eee;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+}
+
+.navbar-nav {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg-nav {
+    background-color: #0d0e0d;
+}
+
+.bg-button {
+    background-color: #A37948 !important;
+    color: aliceblue !important;
+}
+
+
+.active {
+    background-color: #04AA6D;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.linksfooter {
+    text-align: left;
+}
+.bg-footer {
+    background-color: #ebebeb;
+}
+
+.carousel {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+ul.slides input {
+    display: none;
+}
+
+.slide-container {
+    display: block;
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+}
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover+.carousel-controls label {
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked+.slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked+.slide-container .carousel-controls label {
+    display: block;
+}
+
+input#img-1:checked~.carousel-dots label#img-dot-1,
+input#img-2:checked~.carousel-dots label#img-dot-2,
+input#img-3:checked~.carousel-dots label#img-dot-3,
+input#img-4:checked~.carousel-dots label#img-dot-4,
+input#img-5:checked~.carousel-dots label#img-dot-5,
+input#img-6:checked~.carousel-dots label#img-dot-6 {
+    opacity: 1;
+}
+
+
+input:checked+.slide-container .nav label {
+    display: block;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    color: #333;
+}
+
+.accordion {
+    height: 250px;
+    overflow: hidden;
+    margin-left: 17em;
+    margin-right: 17em;
+
+}
+
+.accordion ul {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion ul li {
+    display: table-cell;
+    vertical-align: bottom;
+    position: relative;
+    width: 16.666%;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all 500ms ease;
+}
+
+.accordion ul li div {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.accordion ul li div a {
+    display: block;
+    height: 250px;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+    transition: all 200ms ease;
+}
+
+.accordion ul li div a * {
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    text-overflow: ellipsis;
+    position: relative;
+    z-index: 5;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateX(-20px);
+    transition: all 400ms ease;
+}
+
+.accordion ul li div a h2 {
+    font-family: Montserrat, sans-serif;
+    text-overflow: clip;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    top: 160px;
+}
+
+.accordion ul li div a p {
+    top: 160px;
+    font-size: 13.5px;
+}
+
+.accordion ul li:nth-child(1) {
+    background-image: url("/img/watches04.jpeg");
+}
+
+.accordion ul li:nth-child(2) {
+    background-image: url("/img/watches05.jpeg");
+}
+
+.accordion ul li:nth-child(3) {
+    background-image: url("/img/watches06.jpeg");
+}
+
+.accordion ul li:nth-child(4) {
+    background-image: url("/img/watches07.jpg");
+}
+
+.accordion ul li:nth-child(5) {
+    background-image: url("/img/watches08.jpg");
+}
+
+.accordion ul li:nth-child(6) {
+    background-image: url("/img/watches09.jpg");
+}
+
+.accordion ul:hover li,
+.accordion ul:focus-within li {
+    width: 8%;
+}
+
+.accordion ul li:focus {
+    outline: none;
+}
+
+.accordion ul:hover li:hover,
+.accordion ul li:focus,
+.accordion ul:focus-within li:focus {
+    width: 60%;
+}
+
+.accordion ul:hover li:hover a,
+.accordion ul li:focus a,
+.accordion ul:focus-within li:focus a {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.accordion ul:hover li:hover a *,
+.accordion ul li:focus a *,
+.accordion ul:focus-within li:focus a * {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.accordion ul:hover li {
+    width: 8% !important;
+}
+
+.accordion ul:hover li a * {
+    opacity: 0 !important;
+}
+
+.accordion ul:hover li:hover {
+    width: 60% !important;
+}
+
+.accordion ul:hover li:hover a {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.accordion ul:hover li:hover a * {
+    opacity: 1 !important;
+    transform: translateX(0);
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+    }
+
+    .accordion {
+        height: auto;
+    }
+
+    .accordion ul li,
+    .accordion ul li:hover,
+    .accordion ul:hover li,
+    .accordion ul:hover li:hover {
+        position: relative;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        transition: none;
+    }
+}
+
+.about {
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    color: #666;
+}
+
+.about a {
+    color: blue;
+    text-decoration: none;
+}
+
+.about a:hover {
+    text-decoration: underline;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+/* PRODUCT CARD */
+
+/* ----- Variables ----- */
+/* ----- Global ----- */
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    display: grid;
+    grid-template-rows: 1fr;
+    font-family: "Raleway", sans-serif;
+    background-color: #01e37f;
+  }
+  
+  h3 {
+    font-size: 0.7em;
+    letter-spacing: 1.2px;
+    color: #a6a6a6;
+  }
+  
+  img {
+    max-width: 100%;
+    filter: drop-shadow(1px 1px 3px #a6a6a6);
+  }
+  
+  /* ----- Product Section ----- */
+  .product {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    margin: auto;
+    padding: 2.5em 0;
+    min-width: 600px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  /* ----- Photo Section ----- */
+  .product__photo {
+    position: relative;
+  }
+  
+  .photo-container {
+    position: absolute;
+    left: -2.5em;
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .photo-main {
+    border-radius: 6px 6px 0 0;
+    background-color: #9be010;
+    background: radial-gradient(#e5f89e, #96e001);
+  }
+  .photo-main .controls {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em;
+    color: #fff;
+  }
+  .photo-main .controls i {
+    cursor: pointer;
+  }
+  .photo-main img {
+    position: absolute;
+    left: -3.5em;
+    top: 2em;
+    max-width: 110%;
+    filter: saturate(150%) contrast(120%) hue-rotate(10deg) drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+  }
+  
+  .photo-album {
+    padding: 0.7em 1em;
+    border-radius: 0 0 6px 6px;
+    background-color: #fff;
+  }
+  .photo-album ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  .photo-album li {
+    float: left;
+    width: 55px;
+    height: 55px;
+    padding: 7px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+  }
+  
+  /* ----- Informations Section ----- */
+  .product__info {
+    padding: 0.8em 0;
+  }
+  
+  .title h1 {
+    margin-bottom: 0.1em;
+    color: #4c4c4c;
+    font-size: 1.5em;
+    font-weight: 900;
+  }
+  .title span {
+    font-size: 0.7em;
+    color: #a6a6a6;
+  }
+  
+  .price {
+    margin: 1.5em 0;
+    color: #ff3f40;
+    font-size: 1.2em;
+  }
+  .price span {
+    padding-left: 0.15em;
+    font-size: 2.9em;
+  }
+  
+  .variant {
+    overflow: auto;
+  }
+  .variant h3 {
+    margin-bottom: 1.1em;
+  }
+  .variant li {
+    float: left;
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .variant li:first-child, .variant li:hover {
+    border: 1px solid #a6a6a6;
+  }
+  .variant li:not(:first-child) {
+    margin-left: 0.1em;
+  }
+  
+  .description {
+    clear: left;
+    margin: 2em 0;
+  }
+  .description h3 {
+    margin-bottom: 1em;
+  }
+  .description ul {
+    font-size: 0.8em;
+    list-style: disc;
+    margin-left: 1em;
+  }
+  .description li {
+    text-indent: -0.6em;
+    margin-bottom: 0.5em;
+  }
+  nav a img {
+    width: 20%;
+  }
+  .buy--btn {
+    text-decoration: none;
+    padding: 1.5em 3.1em;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #fff;
+    background-color: #ff3f40;
+    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    cursor: pointer;
+  }
+  .buy--btn:active {
+    transform: scale(0.97);
+  }
+  
+  /* ----- Footer Section ----- */
+  footer {
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+  }
+  footer a {
+    color: #4c4c4c;
+  }
+  footer a:hover {
+    color: #ff3f40;
+  }
+/*END OF PRODUCT CARD*/
+
+/* Watch Container */
+.watch-container {
+    width: 300px;
+    margin: 50px auto;
+}
+
+/* Watch */
+.watch {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+/* Watch Face */
+.watch-face {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background: #3F484A;
+    /* Dial colour */
+    border: 10px solid silver;
+    /* Face border */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5), 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.watch-face-outline-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #777;
+    left: 145px;
+    top: 24px;
+    border-radius: 100%;
+    transform-origin: 50% 126px;
+}
+
+.point-12 {
+    transform: rotate(0deg);
+}
+
+.point-1 {
+    transform: rotate(30deg);
+}
+
+.point-2 {
+    transform: rotate(60deg);
+}
+
+.point-3 {
+    transform: rotate(90deg);
+}
+
+.point-4 {
+    transform: rotate(120deg);
+}
+
+.point-5 {
+    transform: rotate(150deg);
+}
+
+.point-6 {
+    transform: rotate(180deg);
+}
+
+.point-7 {
+    transform: rotate(210deg);
+}
+
+.point-8 {
+    transform: rotate(240deg);
+}
+
+.point-9 {
+    transform: rotate(270deg);
+}
+
+.point-10 {
+    transform: rotate(300deg);
+}
+
+.point-11 {
+    transform: rotate(330deg);
+}
+
+/* Watch Face Date */
+.watch-face-date {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 27px;
+    height: 27px;
+    border-radius: 100%;
+    text-align: center;
+    top: 138px;
+    right: 50px;
+    font-size: 15px;
+    line-height: 27px;
+    color: #aaa;
+    font-weight: 300;
+}
+
+/* Watch Face Center */
+.watch-face-centre {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 144px;
+    left: 144px;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.watch-face-centre-inner {
+    position: absolute;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    top: 2px;
+    left: 2px;
+    border-radius: 100%;
+    background: #333;
+    border: 2px solid #fa9f22;
+}
+
+.watch-face-hand {
+    position: absolute;
+}
+
+.watch-face-hand.hour {
+    width: 4px;
+    height: 60px;
+    top: 90px;
+    left: 148px;
+    border-radius: 10px;
+    background: #fff;
+    transform-origin: 50% 100%;
+    transform: rotate(306deg);
+}
+
+.watch-face-hand.minute {
+    width: 4px;
+    height: 120px;
+    top: 30px;
+    left: 148px;
+    border-radius: 10px;
+    background: #fff;
+    transform-origin: 50% 100%;
+    transform: rotate(50deg);
+}
+
+.watch-face-hand.second {
+    width: 2px;
+    height: 145px;
+    top: 20px;
+    left: 149px;
+    border-radius: 10px;
+    background: #fa9f22;
+    transform-origin: 50% 130px;
+    transform: rotate(180deg);
+}
+
+/* Watch Crown */
+.watch-crown {
+    position: relative;
+    z-index: -1;
+    width: 15px;
+    height: 26px;
+    top: -163px;
+    left: 295px;
+    border-radius: 5px;
+    background: #999;
+    border-right: 2px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Watch Straps */
+.watch-strap-top {
+    position: relative;
+    z-index: -1;
+    width: 120px;
+    height: 150px;
+    left: 90px;
+    bottom: -20px;
+    background: #9f7a49;
+    border-radius: 10px 10px 0 0;
+}
+
+.watch-strap-bottom {
+    position: relative;
+    z-index: -1;
+    width: 120px;
+    height: 150px;
+    left: 90px;
+    bottom: 20px;
+    background: #9f7a49;
+    border-radius: 0 0 10px 10px;
+    color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    text-align: center;
+    padding-top: 120px;
+    color: white;
+}
+
+section.article {
+    margin: 0 3em;
+    background-image: url('/img/watches09.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section aside {
+    width: 15em;
+    padding: 0 1em;
+    background-color: #fff;
+    right: 2em;
+    position: absolute;
+}
+
+aside h3 {
+    padding: 0;
+    text-align: center;
+}
+
+aside p {
+    margin: 0;
+}
+
+.retours {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 40px;
+}
+
+.retLiv {
+    margin: 0 10px;
+    border-left: 2px solid rgba(0, 0, 0, 0.3);
+    border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.retours div {
+    width: 15%;
+}
+
+.pagination {
+    display: inline-block;
+    justify-content: center;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  .pagination :hover {
+    color:red;
+  }
+    /* -----------------  CSS pour starbuck code ------------*/
+/*.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+}
+.content .textBox h2{
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+.content .textBox h2 span {
+    color: #017143;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.content .textBox p {
+    color: #333;
+}
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.content .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+.content .imgBox img {
+    max-width: 340px;
+}
+.thumb {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    display: flex;   
+}
+.thumb li  {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.thumb li:hover {
+    transform: translateY(-15px);
+}
+.thumb li img {
+    max-width: 60px;
+}
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.sci li {
+    list-style: none;
+}
+.sci li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    filter: invert(1);
+}
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #017143;
+    clip-path: circle(600px at right 800px);
+}*/
+
+
+
+
